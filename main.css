@@ -1,0 +1,22 @@
+body {
+    background-color: blueviolet;
+}
+
+table {
+    width: 777px;
+}
+
+table, th, td {
+    background-color: gray;
+    border: 5px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+
+}
+
+#submitTable {
+    margin: 20px;
+}
