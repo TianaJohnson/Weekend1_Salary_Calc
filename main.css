@@ -3,7 +3,7 @@ body {
 }
 
 table {
-    width: 777px;
+    width: 800px;
 }
 
 table, th, td {
@@ -14,9 +14,24 @@ table, th, td {
 
 th, td {
     padding: 5px;
+    width: 133px;
 
 }
 
 #submitTable {
     margin: 20px;
+}
+
+#addEmployee {
+    margin: 10px 60px;
+}
+
+.flex-container {
+    justify-content:center;
+    
+
+}
+#contentAdd {
+    padding: 5px;
+    width: 133px;
 }
