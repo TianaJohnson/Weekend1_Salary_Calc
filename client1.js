@@ -68,3 +68,5 @@ function updateSalary( allSalary ){
         monthSal.css('background-color', 'red');
     }
 }
+
+

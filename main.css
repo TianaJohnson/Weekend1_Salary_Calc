@@ -1,5 +1,5 @@
 body {
-    background-color: blueviolet;
+    background-color: rgb(167, 140, 192);
 }
 
 table {
@@ -7,7 +7,7 @@ table {
 }
 
 table, th, td {
-    background-color: gray;
+    background-color: rgb(91, 193, 224);
     border: 5px solid black;
     border-collapse: collapse;
 }
@@ -26,12 +26,24 @@ th, td {
     margin: 10px 60px;
 }
 
-.flex-container {
-    justify-content:center;
-    
-
+.flex-container {  
+    justify-content: center;
 }
+
 #contentAdd {
     padding: 5px;
     width: 133px;
+}
+
+header {
+    text-align: center;
+    font-size: 30px;
+}
+
+#addEmployee {
+    text-align: center;
+}
+
+#inputAddEmp {
+
 }
