@@ -1,6 +1,8 @@
 
 let employeeArray = [];
 let salary = 0;
+const monthsInYear = 12;
+const maxMonthlySal = 20000;
 
 // employee class constructor
 class Employee {
@@ -19,8 +21,9 @@ $(document).ready(function () {
     console.log('jQueary is ready!');
     $('#submit').on('click', userInput);
     $('#submit').on('click', updateExpensis);
+   // $('.tableBody').on('click', '.deleteEmployeeButton', deleteEmployee )
 
-// function to make new Employee = user input
+// function to make new Employee = user input / set values
     function userInput() {
         let newEmp = new Employee($('.firstNameInput').val(),
             $('.lastNameInput').val(), $('.emplIDInput').val(),
@@ -67,13 +70,21 @@ function clearInput() {
 // update Salary function
 function updateSalary() {
    // console.log('in Salary:', allSalary);
-    let monthlySalary = salary / 12 ;
+    let monthlySalary = salary / monthsInYear ;
     let monthSal = $('#monthlySalary');
     monthSal.empty();
     monthSal.append('<h2> Monthly Salary: $' + monthlySalary.toFixed(2) + '</h2>');
-    if (monthlySalary > 20000) {
+    if (monthlySalary > maxMonthlySal) {
         monthSal.css('background-color', 'red');
     }
 }
 
+// function deleteEmployee(){
+//     let deleteEmpSal = $(this).parent().prev().prev().text();
+//     salary -= Number(employee.deleteEmployee) / 12;
+//     $('#monthlySalary').html(salary);
+
+//     $(this).parent().parent().remove();
+
+// }
 
