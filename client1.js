@@ -1,5 +1,6 @@
-let totalSalary = 0;
+
 let employeeArray = [];
+let salary = 0;
 
 // employee class constructor
 class Employee{
@@ -13,9 +14,9 @@ class Employee{
 } // end class
 
 $(document).ready(function() {
-    console.log('jQueary is ready!')
-    $('#submit').on('click', userInput )
-    $('#submit').on('click', updateExpensis)
+    console.log('jQueary is ready!');
+    $('#submit').on('click', userInput );
+    $('#submit').on('click', updateExpensis);
 
     function userInput(){
     let newEmp = new Employee( $('.firstNameInput').val(),
@@ -24,15 +25,11 @@ $(document).ready(function() {
 
     employeeArray.push( newEmp );
     }
-
-    $('#monthlySalar').append('<h4> Monthly Salary: $' + totalSalary.toFixed(2) + '</h4>');
-
-
-         
-  
+   
 });   
 
 function updateExpensis(){
+    let totalSalary = 0;
     let outputElement = $('.tableBody');
     outputElement.empty();
     for( employee of employeeArray ){
@@ -41,10 +38,15 @@ function updateExpensis(){
       '</td><td>' + employee.jobTitle + '</td><td>' +
        '$' +  Number(employee.annualSalary).toFixed(2) + '</td><td>' +
         '<button class="deleteEmployeeButton">Delete</button>' + '</td></tr>') ;
-        console.log(employeeArray);
-        clearInput();
-
+        totalSalary += Number(employee.annualSalary);
+        console.log( totalSalary );
+        $('#monthlySalary').append('<h4> Monthly Salary: $' + totalSalary.toFixed( 2 ) + '</h4>');
+        
     }
+    
+        // console.log(totalSalary);
+        clearInput();
+        updateSalary( totalSalary );
 }
 
 function clearInput(){
@@ -54,4 +56,15 @@ function clearInput(){
     $('.empTitleInput').val('');
     $('.annualSalaryInput').val('');
     console.log('cleared input');
+}
+
+function updateSalary( allSalary ){
+    console.log('in Salary:', allSalary);
+    let monthlySalary = salary + allSalary;
+    let monthSal = $('#monthlySalary'); 
+    monthSal.empty();
+    monthSal.append('<h2> Monthly Salary: $' + monthlySalary.toFixed(2) + '</h2>');
+    if( monthlySalary > 20000 ){
+        monthSal.css('background-color', 'red');
+    }
 }
