@@ -4,6 +4,8 @@ let salary = 0;
 const monthsInYear = 12;
 const maxMonthlySal = 20000;
 
+// NO need for class constructor with the server side attached //
+
 // //employee class constructor
 // class Employee {
 //     constructor(fName, lName, employeeID, jobTitle, annualSalary) {
@@ -21,7 +23,7 @@ $(document).ready(function () {
     console.log('jQueary is ready!');
     $('#submit').on('click', serverInfo, console.log('Send to server') );
     $('#submit').on('click', updateExpensis, console.log(' recieved from server') );
-    // $('.tableBody').on('click', '.deleteEmployeeButton', deleteEmployee )
+    $('.deleteEmployeeButton').on('click', deleteEmployee );
 
     // send to server
     function serverInfo() {
@@ -33,7 +35,7 @@ $(document).ready(function () {
             annualSalary: $('#annualSalaryInput').val()
         }
         console.log(arrayInput);
-
+        // ajax POST
         $.ajax({
             method: 'POST',
             url: '/employee-info',
@@ -45,6 +47,7 @@ $(document).ready(function () {
         });
     }
 
+    // With ajax get/post this is now useless
 
     //function to make new Employee = user input / set values
     // function userInput() {
@@ -59,6 +62,7 @@ $(document).ready(function () {
 
 
     // function to update salary
+    // turned thi into my GET function
 
     function updateExpensis() {
         $.ajax({
@@ -114,12 +118,15 @@ $(document).ready(function () {
         }
     }
 
-    // function deleteEmployee(){
-    //     let deleteEmpSal = $(this).parent().prev().prev().text();
-    //     salary -= Number(employee.deleteEmployee) / 12;
-    //     $('#monthlySalary').html(salary);
+    function deleteEmployee(){
+            console.log('delete employee', $(this).parent() );
+            $(this).parent().remove();
+        }
+        // let deleteEmpSal = $(this).parent().prev().prev().text();
+        // salary -= Number(employee.deleteEmployee) / 12;
+        // $('#monthlySalary').html(salary);
 
-    //     $(this).parent().parent().remove();
+        // $(this).parent().parent().remove();
 
     // }
 });
