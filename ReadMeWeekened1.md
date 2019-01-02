@@ -29,6 +29,6 @@ Create a page that takes employee salarys and updates a total salary to keep tra
     The delete functionality has been removed from this project, we'll come back to that after break. You're welcome to give it a try but it's not required.
 
     Tasks
-    Move the array to the server
-    Make a POST request to send the new employee to the server
-    Make a GET request to retrieve the list of employees from the server
+    [/]Move the array to the server
+    [/]Make a POST request to send the new employee to the server
+    [/]Make a GET request to retrieve the list of employees from the server
