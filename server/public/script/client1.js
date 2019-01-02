@@ -23,7 +23,7 @@ $(document).ready(function () {
     console.log('jQueary is ready!');
     $('#submit').on('click', serverInfo, console.log('Send to server') );
     $('#submit').on('click', updateExpensis, console.log(' recieved from server') );
-    $('.deleteEmployeeButton').on('click', deleteEmployee );
+    //$('.deleteEmployeeButton').on('click', deleteEmployee );
 
     // send to server
     function serverInfo() {

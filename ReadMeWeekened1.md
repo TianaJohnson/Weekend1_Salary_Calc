@@ -18,3 +18,17 @@ Create a page that takes employee salarys and updates a total salary to keep tra
         [-]- creat and array and push input field info into it.
         [|]- create a button that when clicked will delet a row from the table 
             [|]- when a line is deleted it suptract the annual salary from overall total.
+
+    Updated for Winter Break
+
+
+    [/]-First type npm install and npm start. You should see a client side implementation of the Salary Calculator appear on http://localhost:5000.
+
+    NOTE: If you get an address in use error with 5000, try changing the port in the server.js file and re-running with npm start.
+
+    The delete functionality has been removed from this project, we'll come back to that after break. You're welcome to give it a try but it's not required.
+
+    Tasks
+    Move the array to the server
+    Make a POST request to send the new employee to the server
+    Make a GET request to retrieve the list of employees from the server
