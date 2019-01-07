@@ -5,8 +5,7 @@ body {
 }
 
 table {
-    margin: 15px 300px;
-    width: 1000px;
+    width: 100%;
 }
 
 table, th, td {
